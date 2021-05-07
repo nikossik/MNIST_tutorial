@@ -44,9 +44,10 @@ y_test = to_categorical(y_test, nb_classes)
 * In the next cell you are supposed to implement your architecture of **Feed Forward Network**
 * Use the following Keras layers:
     * `Input` - layer for the input node, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Input)
-    * `Dense` - fully connected layer $z=WX^T$ (activation can be included as param), [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense)
+    * `Dense` - fully connected layer (activation can be included as param), [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense)
     * `Activation` - activation layer, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Activation)
     * `Dropout` (optional) - dropout regularizer, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dropout)
     
     
 * Make sure your last layer has `nb_classes` neurons and `softmax` activation which allows you to model probabilistic distribution over all classes 
+[softmax](https://i.ytimg.com/vi/o6HrH2EMD-w/maxresdefault.jpg)
