@@ -50,5 +50,7 @@ Use the following Keras layers:
 Make sure your last layer has nb_classes neurons and softmax activation which allows you to model probabilistic distribution over all classes
 
 Softmax activation:
+```python
 $$softmax(\hat{y_i}) = \frac{e^{\hat{y_i}}}{\sum_{i=1}^n e^\hat{y_i}}$$
 where $\hat{y_i}$ is *i*-th prediction and  $n$ is number of predictions
+```
