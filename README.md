@@ -129,8 +129,8 @@ plt.legend(loc='best')
 plt.grid(True)
 plt.show()
 ```
-![loss](https://drive.google.com/file/d/1njxauk1f5vj99qVSHG0njgJxsckazMr7/view?usp=sharing)
-![accuracy](https://drive.google.com/file/d/1oH6wba4ICJa82Gzos6y6gFzlXXwltCPk/view?usp=sharing)
+![loss](https://drive.google.com/file/d/1_pe-QuGxR6mqOvYZfnJlg7sPP__GXnQ1/view?usp=sharing)
+![accuracy](https://drive.google.com/file/d/16qif2JN4i9Sw8KaqnFUUg04OliXOK_kF/view?usp=sharing)
 
 ### Finally, evaluate its performance
 ```python
@@ -178,9 +178,9 @@ for i, incorrect in enumerate(incorrect_indices[:9]):
 plt.show()
 ```
 * Sample correct predictions:
-![correct](https://drive.google.com/file/d/1zijYUMsHmijT5TVpKJnWAK3REB8dny-g/view?usp=sharing)
+![correct](https://drive.google.com/file/d/1CFfW80xf38jYquTtI4k1puphhB1gAt_K/view?usp=sharing)
 * Sample wrong predictions:
-![wrong](https://drive.google.com/file/d/1ZJgIvSl6w5UYRLfuH05QIqsV1OkrdKkF/view?usp=sharing)
+![wrong](https://drive.google.com/file/d/1zMyTz-8ZCW1DZz9lB1xatm13ouk3i0in/view?usp=sharing)
 
 ### That's all
 
