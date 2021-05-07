@@ -75,7 +75,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 ```python
 model.summary()
 ```
-```python
+```
 Output:
 Model: "model"
 _________________________________________________________________
@@ -140,7 +140,7 @@ test_acc = model.evaluate(X_test, y_test)[1]
 print('Train accuracy:', train_acc)
 print('Test accuracy:', test_acc)
 ```
-```python
+```
 Output:
 60000/60000 [==============================] - 1s 16us/sample - loss: 0.4260 - accuracy: 0.8814
 10000/10000 [==============================] - 0s 17us/sample - loss: 0.4247 - accuracy: 0.8787
