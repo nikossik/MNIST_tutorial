@@ -75,7 +75,8 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 ```python
 model.summary()
 ```
-```out:
+```python
+Output:
 Model: "model"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -99,3 +100,87 @@ Trainable params: 63,018
 Non-trainable params: 0
 _________________________________________________________________
 ```
+```python
+# get history from training info
+hist_loss = training_info.history['loss']
+hist_val_loss = training_info.history['val_loss']
+hist_acc = training_info.history['accuracy']
+hist_val_acc = training_info.history['val_accuracy']
+
+# plot losses
+plt.figure(figsize=(8, 6))
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.plot(hist_loss, color='red', label='train_loss')
+plt.plot(hist_val_loss, color='green', label='val_loss')
+plt.xlim(0, len(hist_loss) - 1)
+plt.legend(loc='best')
+plt.grid(True)
+plt.show()
+
+# plot metrics
+plt.figure(figsize=(8, 6))
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.plot(hist_acc, color='orange', label='train_acc')
+plt.plot(hist_val_acc, color='purple', label='val_acc')
+plt.xlim(0, len(hist_acc) - 1)
+plt.legend(loc='best')
+plt.grid(True)
+plt.show()
+```
+![loss](https://drive.google.com/file/d/1njxauk1f5vj99qVSHG0njgJxsckazMr7/view?usp=sharing)
+![accuracy](https://drive.google.com/file/d/1oH6wba4ICJa82Gzos6y6gFzlXXwltCPk/view?usp=sharing)
+
+### Finally, evaluate its performance
+```python
+train_acc = model.evaluate(X_train, y_train)[1]
+test_acc = model.evaluate(X_test, y_test)[1]
+
+print('Train accuracy:', train_acc)
+print('Test accuracy:', test_acc)
+```
+```python
+Output:
+60000/60000 [==============================] - 1s 16us/sample - loss: 0.4260 - accuracy: 0.8814
+10000/10000 [==============================] - 0s 17us/sample - loss: 0.4247 - accuracy: 0.8787
+Train accuracy: 0.8814167
+Test accuracy: 0.8787
+```
+### Inspecting the output
+* It's always a good idea to inspect the output and make sure everything looks sane. Here we'll look at some examples it gets right, and some examples it gets wrong.
+
+```python
+predicted_classes = np.argmax(model.predict(X_test), axis=1)
+
+correct_indices = np.nonzero(predicted_classes == np.argmax(y_test, axis=1))[0]
+incorrect_indices = np.nonzero(predicted_classes != np.argmax(y_test, axis=1))[0]
+```
+```python
+print('Sample correct predictions')
+plt.figure()
+for i, correct in enumerate(correct_indices[:9]):
+    plt.subplot(3,3,i+1)
+    plt.imshow(X_test[correct].reshape(28,28), cmap='gray')
+    plt.axis('off')
+    plt.title("Predicted {}, Class {}".format(predicted_classes[correct], np.argmax(y_test[correct])))
+    
+plt.show()
+
+print('Sample wrong predictions')
+plt.figure()
+for i, incorrect in enumerate(incorrect_indices[:9]):
+    plt.subplot(3,3,i+1)
+    plt.imshow(X_test[incorrect].reshape(28,28), cmap='gray')
+    plt.axis('off')
+    plt.title("Predicted {}, Class {}".format(predicted_classes[incorrect], np.argmax(y_test[incorrect])))
+    
+plt.show()
+```
+* Sample correct predictions:
+![correct](https://drive.google.com/file/d/1zijYUMsHmijT5TVpKJnWAK3REB8dny-g/view?usp=sharing)
+* Sample wrong predictions:
+![wrong](https://drive.google.com/file/d/1ZJgIvSl6w5UYRLfuH05QIqsV1OkrdKkF/view?usp=sharing)
+
+### That's all
+
