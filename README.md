@@ -19,22 +19,22 @@ from tensorflow.keras.utils import to_categorical
 ```
 
 ### Then we import MNIST data and get its shape
-'''
+```python
 nb_classes = 10
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 print("X_train original shape", X_train.shape)
 print("y_train original shape", y_train.shape)
-'''
+```
 
 ### Format data for training 
-'''
+```python
 X_train = X_train.reshape(-1, 784).astype(np.float32)
 X_test = X_test.reshape(-1, 784).astype(np.float32)
 
 X_train /= 255.0
 X_test /= 255.0
-'''
-'''
+```
+```python
 y_train = to_categorical(y_train, nb_classes)
 y_test = to_categorical(y_test, nb_classes)
-'''
+```
