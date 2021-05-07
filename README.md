@@ -41,16 +41,12 @@ y_train = to_categorical(y_train, nb_classes)
 y_test = to_categorical(y_test, nb_classes)
 ```
 ### Build the neural network
-In the next cell you are supposed to implement your architecture of Feed Forward Network
-Use the following Keras layers:
-- Input - layer for the input node, documentation
-- Dense - fully connected layer
-- Activation - activation layer, documentation
-- Dropout (optional) - dropout regularizer, documentation
-Make sure your last layer has nb_classes neurons and softmax activation which allows you to model probabilistic distribution over all classes
-
-Softmax activation:
-```python
-$$softmax(\hat{y_i}) = \frac{e^{\hat{y_i}}}{\sum_{i=1}^n e^\hat{y_i}}$$
-where $\hat{y_i}$ is *i*-th prediction and  $n$ is number of predictions
-```
+* In the next cell you are supposed to implement your architecture of **Feed Forward Network**
+* Use the following Keras layers:
+    * `Input` - layer for the input node, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Input)
+    * `Dense` - fully connected layer $z=WX^T$ (activation can be included as param), [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense)
+    * `Activation` - activation layer, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Activation)
+    * `Dropout` (optional) - dropout regularizer, [documentation](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dropout)
+    
+    
+* Make sure your last layer has `nb_classes` neurons and `softmax` activation which allows you to model probabilistic distribution over all classes 
