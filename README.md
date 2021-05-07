@@ -52,3 +52,50 @@ y_test = to_categorical(y_test, nb_classes)
 * Make sure your last layer has `nb_classes` neurons and `softmax` activation which allows you to model probabilistic distribution over all classes 
 * Softmax activation:
 ![softmax](https://i.ytimg.com/vi/o6HrH2EMD-w/maxresdefault.jpg)
+
+```python
+input_shape = X_train.shape[1:] # batch dim is not included
+
+input_layer = Input(shape=input_shape)
+fc0 = Dense(64, activation='elu')(input_layer)
+dropout0 = Dropout(0.9)(fc0)
+fc1 = Dense(128, activation='relu')(dropout0)
+dropout1 = Dropout(0.7)(fc1)
+fc2 = Dense(32, activation='elu')(dropout1)
+output_layer = Dense(10, activation='softmax')(fc2)
+
+model = Model(inputs=input_layer, outputs=output_layer)
+```
+
+```python
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+```
+
+### Let's see model summary
+```python
+model.summary()
+out:
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 784)]             0         
+_________________________________________________________________
+dense (Dense)                (None, 64)                50240     
+_________________________________________________________________
+dropout (Dropout)            (None, 64)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 128)               8320      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 32)                4128      
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                330       
+=================================================================
+Total params: 63,018
+Trainable params: 63,018
+Non-trainable params: 0
+_________________________________________________________________
+
+```
