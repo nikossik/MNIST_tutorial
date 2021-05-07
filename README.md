@@ -9,14 +9,15 @@
 # Code
 
 ### Imports
-***
-import numpy as np
+'''{Python}
+
+{import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Dense, Dropout, Activation
-from tensorflow.keras.utils import to_categorical
-***
+from tensorflow.keras.utils import to_categorical}
+'''
 
 ### Then we import MNIST data and get its shape
 '''
