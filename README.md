@@ -50,4 +50,5 @@ y_test = to_categorical(y_test, nb_classes)
     
     
 * Make sure your last layer has `nb_classes` neurons and `softmax` activation which allows you to model probabilistic distribution over all classes 
+* Softmax activation:
 ![softmax](https://i.ytimg.com/vi/o6HrH2EMD-w/maxresdefault.jpg)
