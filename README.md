@@ -44,7 +44,11 @@ y_test = to_categorical(y_test, nb_classes)
 In the next cell you are supposed to implement your architecture of Feed Forward Network
 Use the following Keras layers:
 - Input - layer for the input node, documentation
-- Dense - fully connected layer **𝑧=𝑊𝑋𝑇**
+- Dense - fully connected layer
 - Activation - activation layer, documentation
 - Dropout (optional) - dropout regularizer, documentation
 Make sure your last layer has nb_classes neurons and softmax activation which allows you to model probabilistic distribution over all classes
+
+Softmax activation:
+$$softmax(\hat{y_i}) = \frac{e^{\hat{y_i}}}{\sum_{i=1}^n e^\hat{y_i}}$$
+where $\hat{y_i}$ is *i*-th prediction and  $n$ is number of predictions
