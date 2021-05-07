@@ -129,9 +129,6 @@ plt.legend(loc='best')
 plt.grid(True)
 plt.show()
 ```
-![loss](https://drive.google.com/file/d/1_pe-QuGxR6mqOvYZfnJlg7sPP__GXnQ1/view?usp=sharing)
-![accuracy](https://drive.google.com/file/d/16qif2JN4i9Sw8KaqnFUUg04OliXOK_kF/view?usp=sharing)
-
 ### Finally, evaluate its performance
 ```python
 train_acc = model.evaluate(X_train, y_train)[1]
@@ -177,10 +174,5 @@ for i, incorrect in enumerate(incorrect_indices[:9]):
     
 plt.show()
 ```
-* Sample correct predictions:
-![correct](https://drive.google.com/file/d/1CFfW80xf38jYquTtI4k1puphhB1gAt_K/view?usp=sharing)
-* Sample wrong predictions:
-![wrong](https://drive.google.com/file/d/1zMyTz-8ZCW1DZz9lB1xatm13ouk3i0in/view?usp=sharing)
-
 ### That's all
 
