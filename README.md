@@ -74,7 +74,8 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 ### Let's see model summary
 ```python
 model.summary()
-out:
+```
+```out:
 Model: "model"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -97,5 +98,4 @@ Total params: 63,018
 Trainable params: 63,018
 Non-trainable params: 0
 _________________________________________________________________
-
 ```
