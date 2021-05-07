@@ -5,7 +5,7 @@
 ![MNIST](https://miro.medium.com/max/1600/0*9jCey4wywZ4Os7hF.png)
 
 ### Handwritten digit recognition, in general, is a realistic task. The MNIST dataset is also not particularly small: it contains 60,000 images in the training set and 10,000 in the test set. Each image has a resolution of 28x28, totaling 28²=784 features — a rather high dimensionality. So why is MNIST a “Hello World” example? One reason is that it is surprisingly easy to obtain decent accuracy, like 90%, even with a weak or poorly designed machine learning model. A practical setting, seemingly challenging task, high accuracy with little work — a perfect combination for beginners.
-
+================
 # Code
 
 ### Imports
@@ -38,3 +38,11 @@ X_test /= 255.0
 y_train = to_categorical(y_train, nb_classes)
 y_test = to_categorical(y_test, nb_classes)
 ```
+### Build the neural network
+In the next cell you are supposed to implement your architecture of Feed Forward Network
+Use the following Keras layers:
+- Input - layer for the input node, documentation
+- Dense - fully connected layer **𝑧=𝑊𝑋𝑇**
+- Activation - activation layer, documentation
+- Dropout (optional) - dropout regularizer, documentation
+Make sure your last layer has nb_classes neurons and softmax activation which allows you to model probabilistic distribution over all classes
